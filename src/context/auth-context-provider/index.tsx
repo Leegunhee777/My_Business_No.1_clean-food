@@ -28,7 +28,7 @@ const jwtTokenRef = createRef();
 export const AuthContextProvider = ({ children }: Props) => {
   const [authState, authDispatch] = useReducer(authReducer, authInitState);
 
-  useImperativeHandle(csrfRef, () => authState);
+  useImperativeHandle(csrfRef, () => authState.csrfToken);
   useImperativeHandle(jwtTokenRef, () =>
     authState.userInfo ? authState.userInfo.token : undefined
   );
@@ -44,13 +44,21 @@ export const AuthContextProvider = ({ children }: Props) => {
   }, [authState.csrfToken]);
 
   async function initCsrf() {
-    const csrfres = await authUseCase.initCsrfToken();
-    authDispatch({ type: 'UPDATE_CSRF_TOKEN', payload: csrfres });
+    try {
+      const res = await authUseCase.initCsrfToken();
+      authDispatch({ type: 'UPDATE_CSRF_TOKEN', payload: res.csrfToken });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   async function initUserInfo() {
-    const userInfores = await authUseCase.initUserInfo();
-    authDispatch({ type: 'UPDATE_USER_INFO', payload: userInfores });
+    try {
+      const userInfores = await authUseCase.initUserInfo();
+      authDispatch({ type: 'UPDATE_USER_INFO', payload: userInfores });
+    } catch (error) {
+      console.log(error);
+    }
   }
   //이런식으로 처리하면 존재하지 않는 경로는 싹다 SignInScreen로 보내줄있음
   // if (!authState.user ) {

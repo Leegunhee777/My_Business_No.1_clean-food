@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const TopBarWrapper = styled.div`
   background-color: white;
@@ -8,7 +8,7 @@ export const TopBarWrapper = styled.div`
 
   > div {
     margin: 0 auto;
-    height: 80px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -60,5 +60,21 @@ export const MoreIconWrap = styled.div`
     path {
       fill: gray;
     }
+  }
+`;
+const iconSize = css`
+  width: 24px;
+  height: 24px;
+`;
+export const UserWrap = styled.div`
+  ${iconSize}
+
+  > svg {
+    width: 100%;
+    height: 100%;
+
+    /* fill: white;
+    stroke: black;
+    stroke-width: 10; */
   }
 `;

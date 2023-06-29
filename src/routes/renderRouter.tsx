@@ -55,6 +55,10 @@ export const renderRouter = () => {
 
 const routes = [
   {
+    path: PATH.auth.signIn,
+    component: React.lazy(() => import('../app/auth/page/sign-in')),
+  },
+  {
     path: PATH.home,
     component: React.lazy(() => import('../app/home/page/main')),
   },
@@ -78,6 +82,7 @@ const routes = [
     component: React.lazy(() => import('../app/group/page/list')),
   },
   {
+    guard: UseAuthPermit,
     path: PATH.group.detail,
     component: React.lazy(() => import('../app/group/page/detail')),
   },
@@ -106,10 +111,6 @@ const routes = [
     guard: UseAuthPermit,
     path: PATH.my.manage,
     component: React.lazy(() => import('../app/my/manage')),
-  },
-  {
-    path: PATH.auth.signIn,
-    component: React.lazy(() => import('../app/auth/page/sign-in')),
   },
   //
   {

@@ -1,23 +1,21 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const AdConatiner = styled.div`
   display: flex;
   overflow: hidden;
-
-
+  padding: 20px 0px;
   //script도 처리안하고 css를 이용해볼수도있음
-  //overflow: scroll; 
+  //overflow: scroll;
   //아래는 스크롤바를 삭제해주기위한 용도
   //&::-webkit-scrollbar {
-  //display: none;
+  // display: none;
   //-ms-overflow-style: none; /* 인터넷 익스플로러 */
-  //scrollbar-width: none; 
-  //}
+  //scrollbar-width: none;
+  // }
 `;
 
 export const ImageWrap = styled.div`
-  width: 100%;
-  min-width: 300px;
+  min-width: 260px;
   & + & {
     margin-left: 8px;
   }
@@ -33,7 +31,6 @@ export const ImageItem = styled.div<{
   background: url(${({ imgUrl }) => imgUrl}) center center no-repeat;
   background-size: cover;
 `;
-
 
 interface Props {
   width: number;

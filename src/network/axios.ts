@@ -7,7 +7,7 @@ interface IRequestParam extends AxiosRequestConfig {
 export class HttpClient {
   getCsrfToken: any;
   axios = Axios.create({
-    baseURL: 'http://localhost:3000',
+    baseURL: 'http://localhost:5000',
     headers: { 'Content-Type': 'application/json' },
     withCredentials: true,
   });
@@ -24,7 +24,7 @@ export class HttpClient {
       method,
       headers: {
         ...headers,
-        'greenary-csrf-token': this.getCsrfToken().csrfToken,
+        'greenary-csrf-token': this.getCsrfToken(),
       },
       data: body,
     };
