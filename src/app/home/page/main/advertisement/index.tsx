@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAdvertisementVM } from './useAdvertisementVM';
-import image from '../../../../../asset/123.png';
+
 import ad1 from '../../../../../asset/ad1.png';
 
 import ad2 from '../../../../../asset/ad2.png';

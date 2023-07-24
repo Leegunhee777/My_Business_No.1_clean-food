@@ -1,14 +1,17 @@
 import React from 'react';
 import { RecoilRoot } from 'recoil';
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
+
 import { PATH } from './paths';
+
 import TopBar from '../component/layout/topBar';
 import Footer from '../component/layout/footer';
-
 import MobileProtectScreen from '../component/mobile-protect';
-import isMobile from '../utils/new-is-mobile';
+
 import { AuthContextProvider } from '../context/auth-context-provider';
 import UseAuthPermit from '../hooks/use-auth-permit';
+import isMobile from '../utils/new-is-mobile';
+
 import { PageWrap, ContentWrap } from './styled';
 
 export const renderRouter = () => {
@@ -19,8 +22,6 @@ export const renderRouter = () => {
   return (
     <BrowserRouter>
       <AuthContextProvider>
-        {/* fallback을 통해 새로고침하거나 다른 route로 이동할때 보여쥴 UI 셋팅
-        해줄수있다. */}
         <React.Suspense fallback={<>로딩중!!</>}>
           <Routes>
             {routes.map((route, index) => {
@@ -34,7 +35,7 @@ export const renderRouter = () => {
                     <Guard key={index}>
                       <PageWrap>
                         <TopBar />
-                        <ContentWrap>
+                        <ContentWrap className="contentWrap">
                           <RecoilRoot>
                             <Component />
                           </RecoilRoot>
@@ -112,7 +113,6 @@ const routes = [
     path: PATH.my.manage,
     component: React.lazy(() => import('../app/my/manage')),
   },
-  //
   {
     path: '*',
     component: React.lazy(() => import('../app/error')),

@@ -29,9 +29,9 @@ export const PATH: PathType = {
   },
   home: '/',
   store: {
-    list: '/store/list',
-    detail: '/store/:id/',
-    register: '/store/:id?/register/:tab(add|edit)?',
+    list: '/store/:category?/list',
+    detail: '/store/:category?/:id/',
+    register: '/store/:category?/:id?/register/:tab(add|edit)?',
   },
   group: {
     list: '/group/list/',

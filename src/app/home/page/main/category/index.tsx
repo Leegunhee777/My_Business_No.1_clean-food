@@ -6,10 +6,13 @@ import {
   Market,
   Veget,
 } from './styled';
+import { useCategoryVM } from './useCategotyVM';
 const CategoryComponent = () => {
+  const { onClickCategory } = useCategoryVM();
+
   return (
     <CategoryWrap>
-      <CategoryItem>
+      <CategoryItem onClick={onClickCategory.bind(null, 'dish')}>
         <Dish>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +25,7 @@ const CategoryComponent = () => {
           <p>반찬</p>
         </Dish>
       </CategoryItem>
-      <CategoryItem>
+      <CategoryItem onClick={onClickCategory.bind(null, 'localmarket')}>
         <Market>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +39,7 @@ const CategoryComponent = () => {
         </Market>
       </CategoryItem>
 
-      <CategoryItem>
+      <CategoryItem onClick={onClickCategory.bind(null, 'vegetable')}>
         <Veget>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +53,7 @@ const CategoryComponent = () => {
         </Veget>
       </CategoryItem>
 
-      <CategoryItem>
+      <CategoryItem onClick={onClickCategory.bind(null, 'seafood')}>
         <Fish>
           <svg
             xmlns="http://www.w3.org/2000/svg"

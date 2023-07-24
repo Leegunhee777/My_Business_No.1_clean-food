@@ -1,16 +1,16 @@
 import React from 'react';
-import { Container } from './styled';
+import { StoreDetailWrap } from './styled';
 
-import SwipeImageComponent from './swipe-image';
 import TabComponent from './tab';
 
-import MenuListComponent from './menu-list';
-import ReViewListComponent from './review-list';
-import CoBuyGroupListComponent from './co-buy-group-list';
-import { useRecoilState } from 'recoil';
-import { homeAtom } from '../../../home/page/main/state';
-
-const StoreDetailScreen = () => {
+import MenuListComponent from './render-type/menu-list';
+import ReViewListComponent from './render-type/review-list';
+import CoBuyGroupListComponent from './render-type/co-buy-group-list';
+import AdvertisementComponent from './advertisement';
+import DescriptionComponent from './description';
+import { useDetailVM } from './useDetailVM';
+const StoreDetailPage = () => {
+  const { activeTab, clickTabValue } = useDetailVM();
   function switchRender(activeTab: string) {
     switch (activeTab) {
       case 'MENU':
@@ -28,14 +28,17 @@ const StoreDetailScreen = () => {
   }
 
   return (
-    <Container style={{ height: '100%' }}>
+    <StoreDetailWrap>
       <div>
-        <SwipeImageComponent />
-        <TabComponent />
-        {switchRender('')}
+        <AdvertisementComponent />
+        <DescriptionComponent />
+
+        <TabComponent clickTabValue={clickTabValue} activeTab={activeTab} />
+
+        {switchRender(activeTab)}
       </div>
-    </Container>
+    </StoreDetailWrap>
   );
 };
 
-export default StoreDetailScreen;
+export default StoreDetailPage;

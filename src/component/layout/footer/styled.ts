@@ -20,6 +20,7 @@ const iconSize = css`
   width: 32px;
   height: 32px;
 `;
+
 export const HomeIconWrap = styled.div`
   ${iconSize}
   > svg {

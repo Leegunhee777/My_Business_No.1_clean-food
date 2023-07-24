@@ -62,13 +62,14 @@ export const MoreIconWrap = styled.div`
     }
   }
 `;
+
 const iconSize = css`
   width: 24px;
   height: 24px;
 `;
+
 export const UserWrap = styled.div`
   ${iconSize}
-
   > svg {
     width: 100%;
     height: 100%;

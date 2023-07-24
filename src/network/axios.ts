@@ -29,7 +29,6 @@ export class HttpClient {
       data: body,
     };
 
-    //axios는 자동으로 json으로 변환까지도 해준다.
     try {
       const res = await this.axios(req);
       return res.data;

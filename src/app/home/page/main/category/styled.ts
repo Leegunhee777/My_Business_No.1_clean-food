@@ -11,13 +11,14 @@ export const CategoryWrap = styled.div`
   justify-items: center;
 `;
 
-export const CategoryItem = styled.div`
+export const CategoryItem = styled.button`
   border: 2px solid ${({ theme }) => theme.color.green.light};
   border-radius: 12px;
-  width: 120px;
-  height: 120px;
+  width: 126px;
+  height: 126px;
   text-align: center;
   justify-self: flex-end;
+  background-color: white;
   box-shadow: rgb(0 0 0 / 15%) 0px 10px 20px;
   &:nth-child(2n) {
     justify-self: flex-start;

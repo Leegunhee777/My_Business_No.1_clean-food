@@ -15,8 +15,6 @@ export class AuthRepositoryImpl implements AuthRepository {
   }
 
   async getUserInfo(): Promise<any> {
-    console.log('userInfo 호출');
-
     const response = await this.http.request('/auth/me', {
       method: 'GET',
     });

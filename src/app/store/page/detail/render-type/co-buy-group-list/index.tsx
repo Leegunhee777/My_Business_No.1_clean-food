@@ -1,11 +1,7 @@
 import React from 'react';
 
 const CoBuyGroupListComponent = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <div>공동</div>;
+};
 
 export default CoBuyGroupListComponent;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRecoilState } from 'recoil';
-import { hotContentListAtom } from '../state';
+import { hotContentListAtom } from '../state/hotContentList';
 import ban1 from './images/ban1.png';
 import ban2 from './images/ban2.png';
 import ban3 from './images/ban3.png';

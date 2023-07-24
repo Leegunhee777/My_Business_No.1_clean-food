@@ -1,49 +1,13 @@
-import React, { RefObject } from 'react';
-import { 
-  Container,
-} from './styled';
-import image from '../../asset/123.png';
+import { Container } from './styled';
 
 const SignInScreen = () => {
-  
-  const [state, setState] = React.useState({
-    userName: '',
-    password: '',
-  })
-  
   return (
     <Container>
-      <div>
-        <input />
-        <input />
-        <div style={{backgroundColor:'beige', height: '200px'}}>
-          이것은 로그인 화면이다.
-        </div>
-        <div style={{backgroundColor:'beige', height: '200px'}}>
-          이것은 로그인 화면이다.
-        </div>
-        <div style={{backgroundColor:'beige', height: '200px'}}>
-          이것은 로그인 화면이다.
-        </div>
-        <div style={{backgroundColor:'beige', height: '200px'}}>
-          이것은 로그인 화면이다.
-        </div>
-        <div style={{backgroundColor:'beige'}}>
-          이것은 로그인 화면이다.
-        </div>
-        <div style={{backgroundColor:'beige'}}>
-          이것은 로그인 화면이다.
-        </div>
-        <div style={{backgroundColor:'beige'}}>
-          이것은 로그인 화면이다.
-        </div>
-        <div style={{backgroundColor:'beige'}}>
-          이것은 로그인 화면이다.
-        </div>
-
-      </div>
+      <div>로그인 해주셔야 이용가능한 서비스입니다.</div>
+      <input />
+      <input />
     </Container>
-  )
-}
+  );
+};
 
 export default SignInScreen;

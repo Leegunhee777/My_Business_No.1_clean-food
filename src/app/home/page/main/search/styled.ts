@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { theme } from '../../../../../style/theme';
 
 export const SearchWrap = styled.div`
   box-sizing: border-box;

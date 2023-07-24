@@ -1,15 +1,15 @@
-import React from 'react';
-import { SearchWrap, SearchInput } from './styled';
 import { useSearchVM } from './useSearchVM';
+import { SearchWrap, SearchInput } from './styled';
+
 const SearchComponent = () => {
-  const { inputValue, onChangeInput } = useSearchVM();
+  const { searchInput, onChangeInput } = useSearchVM();
   return (
     <SearchWrap>
       <SearchInput
-        value={inputValue}
+        value={searchInput}
         onChange={onChangeInput}
         placeholder="키워드를 입력해보세요!"
-      ></SearchInput>
+      />
     </SearchWrap>
   );
 };

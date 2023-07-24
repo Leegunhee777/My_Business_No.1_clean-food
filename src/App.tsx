@@ -1,8 +1,7 @@
-import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { renderRouter } from './routes/renderRouter';
-import { theme } from './style/theme';
 import { GlobalContextProvider } from './context/global-context-provider';
+import { theme } from './style/theme';
 
 function App() {
   return (

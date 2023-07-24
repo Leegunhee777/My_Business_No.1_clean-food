@@ -1,4 +1,4 @@
-import { HotContent } from '../../state';
+import { Home } from '../../../../model';
 import {
   ContentItemWrap,
   ImageWrap,
@@ -10,7 +10,7 @@ import {
 } from './styled';
 
 interface ContentItemProps {
-  value: HotContent;
+  value: Home.MainHotContent;
 }
 const ContentItem = ({ value }: ContentItemProps) => {
   return (
