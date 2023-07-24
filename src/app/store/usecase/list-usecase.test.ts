@@ -1,13 +1,10 @@
-
-import { ListRepository } from "../repository";
-import { Store } from "../type";
-import { ListUseCase } from "./list-usecase";
-
-
+import { ListRepository } from '../repository';
+import { Store } from '../model';
+import { ListUseCase } from './list-usecase';
 
 class FakeListRepository implements ListRepository {
   async getList(): Promise<Store.ListItem[]> {
-    const data =  [
+    const data = [
       {
         id: 1,
         name: 'ldkjnsdfu',
@@ -37,23 +34,19 @@ class FakeListRepository implements ListRepository {
         id: 6,
         name: 'lsjdnf니어ㅝㅣㅏㄹㅇ8',
         description: '그사이에도 많이도 변했는데 말이죠',
-      }
-    ]
+      },
+    ];
 
-    return data ;
+    return data;
   }
-  
 }
-
 
 describe('ListUseCase', () => {
   const fakeListRepository = new FakeListRepository();
   const listUseCase = new ListUseCase(fakeListRepository);
 
-  it('링터링된 리스트 가져오는 유스케이스', async () => {
-
+  it('리스트 가져오는 유스케이스', async () => {
     const result = await listUseCase.getFilterdList('');
     expect(result.length).toEqual(6);
   });
 });
-

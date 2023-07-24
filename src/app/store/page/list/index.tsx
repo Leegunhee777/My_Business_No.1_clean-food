@@ -1,23 +1,39 @@
 import React from 'react';
-import { Wrap } from './styled';
-import isMobile from '../../../../utils/new-is-mobile';
+import { StoreListWrap } from './styled';
 
-import FilterComponent from './filter';
-import ListComponent from './list';
+import ListComponent from './store-list';
+import { useParams } from 'react-router-dom';
+import LocationFilterComponent from './location-filter';
+import { useListVM } from './useListVM';
+import AdvertisementComponent from './advertisement';
 
-const StoreListScreen = () => {
+const StoreListPage = () => {
+  let { category } = useParams();
+  const {
+    isLocationOpen,
+    tempWideLocaiton,
+    selectedLocation,
+    openLocationHandler,
+    changeTempWideLocation,
+    changeSelectedLocation,
+  } = useListVM();
 
   return (
-    <div>\
-      rkskek
-      <FilterComponent />
-      <ListComponent />
-    </div>
-  )
-}
+    <StoreListWrap>
+      <div>
+        <LocationFilterComponent
+          isLocationOpen={isLocationOpen}
+          openLocationHandler={openLocationHandler}
+          tempWideLocaiton={tempWideLocaiton}
+          changeTempWideLocation={changeTempWideLocation}
+          selectedLocation={selectedLocation}
+          changeSelectedLocation={changeSelectedLocation}
+        />
+        <AdvertisementComponent />
+        <ListComponent category={category!} />
+      </div>
+    </StoreListWrap>
+  );
+};
 
-export default StoreListScreen;
-
-const list =[
-    '스토어 리스트',    '스토어 리스트',    '스토어 리스트',    '스토어 리스트',    '스토어 리스트',    '스토어 리스트',    '스토어 리스트',    '스토어 리스트',    '스토어 리스트',    '스토어 리스트',    '스토어 리스트',    '스토어 리스트',    '스토어 리스트',    '스토어 리스트',    '스토어 리스트',    '스토어 리스트'
-]
+export default StoreListPage;

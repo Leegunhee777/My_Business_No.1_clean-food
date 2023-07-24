@@ -1,26 +1,23 @@
-import React, { useEffect } from 'react';
 import { Container } from './styled';
 
 import SearchComponent from './search';
 import AdvertisementComponent from './advertisement';
-import FilterComponent from './filter';
-import ListComponent from './list';
+import CategoryComponent from './category';
 import NewsComponent from './news';
-import { homeAtom } from './state';
-import { useRecoilState } from 'recoil';
+import HotContentComponent from './hot-content';
 
-const HomeMainScreen = () => {
+const HomeMainPage = () => {
   return (
     <Container>
       <div>
         <SearchComponent />
         <AdvertisementComponent />
-        <FilterComponent />
-        <ListComponent />
+        <CategoryComponent />
+        <HotContentComponent />
         <NewsComponent />
       </div>
     </Container>
   );
 };
 
-export default HomeMainScreen;
+export default HomeMainPage;

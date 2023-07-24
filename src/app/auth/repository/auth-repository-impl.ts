@@ -1,4 +1,4 @@
-import { AuthRepository } from "../repository";
+import { AuthRepository } from '../repository';
 
 export class AuthRepositoryImpl implements AuthRepository {
   http;
@@ -7,31 +7,29 @@ export class AuthRepositoryImpl implements AuthRepository {
     this.http = http;
   }
 
-  async getCsrfToken(): Promise<any> {  
-      // const response = await http.request('/auth/csrf-token', {
-      //   method: 'GET',
-      // });   
-      return 'qweqweqwe';
+  async getCsrfToken(): Promise<any> {
+    const response = await this.http.request('/auth/csrf-token', {
+      method: 'GET',
+    });
+    return response;
   }
 
   async getUserInfo(): Promise<any> {
-    console.log('userInfo 호출');
-
     const response = await this.http.request('/auth/me', {
       method: 'GET',
-    });   
-  
+    });
+
     // return {
     //   id:'이건희'
     // }
   }
 
   async postSignUp(data: any): Promise<any> {
-    const response = await this.http.request('/auth/signup',{
+    const response = await this.http.request('/auth/signup', {
       method: 'POST',
-      body: data
-    })
-    return response
+      body: data,
+    });
+    return response;
   }
 
   async postSignIn(data: any): Promise<any> {

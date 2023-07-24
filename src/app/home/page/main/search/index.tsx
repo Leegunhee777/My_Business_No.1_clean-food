@@ -1,11 +1,17 @@
-import React from 'react';
+import { useSearchVM } from './useSearchVM';
+import { SearchWrap, SearchInput } from './styled';
 
 const SearchComponent = () => {
+  const { searchInput, onChangeInput } = useSearchVM();
   return (
-    <div>
-      서치
-    </div>
-  )
-}
+    <SearchWrap>
+      <SearchInput
+        value={searchInput}
+        onChange={onChangeInput}
+        placeholder="키워드를 입력해보세요!"
+      />
+    </SearchWrap>
+  );
+};
 
 export default SearchComponent;

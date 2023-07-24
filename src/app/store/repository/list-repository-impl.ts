@@ -2,24 +2,23 @@ import { AxiosResponse } from 'axios';
 
 import { ListRepository } from '../repository';
 import { MapperToListItem } from './mapper/mapperToCalendar';
-import { Store } from '../type';
+import { Store } from '../model';
 
 export type ListItemDto = {
-  id: number,
-  name: string,
-  age: number,
-  description: string,
-  date: Date,
-}
+  id: number;
+  name: string;
+  age: number;
+  description: string;
+  date: Date;
+};
 
-export class ListRepositoryImpl implements ListRepository {  
-  
+export class ListRepositoryImpl implements ListRepository {
   // async getTodos (): Promise<Result<Todo[]> | undefined> {
   //   try {
   //     const { status, data }: AxiosResponse<Todo[]> =  await axios.get('https://jsonplaceholder.typicode.com/todos');
   //     if (status < 500) {
   //       return Result.success(data);
-  //     } 
+  //     }
   //   } catch (err) {
   //     return Result.fail(errorMessage.listError);
   //   }
@@ -27,23 +26,22 @@ export class ListRepositoryImpl implements ListRepository {
 
   http;
 
-  constructor(http:any ) {
+  constructor(http: any) {
     this.http = http;
   }
   async getList(): Promise<Store.ListItem[]> {
-
-  
-    // const response : AxiosResponse<ListItemDto[]> 
-    const result = serverCalendarList.map((value: ListItemDto, index: number) => {
-      return  new MapperToListItem(value);
-    })
+    // const response : AxiosResponse<ListItemDto[]>
+    const result = serverCalendarList.map(
+      (value: ListItemDto, index: number) => {
+        return new MapperToListItem(value);
+      }
+    );
 
     return result;
-  };
+  }
 }
 
-
-const serverCalendarList  = [
+const serverCalendarList = [
   {
     id: 1,
     name: 'ldkjnsdfu',
@@ -85,5 +83,5 @@ const serverCalendarList  = [
     age: 11,
     description: '그사이에도 많이도 변했는데 말이죠',
     date: new Date(),
-  }
-]
+  },
+];

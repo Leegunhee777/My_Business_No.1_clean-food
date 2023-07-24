@@ -1,34 +1,39 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
   border-top: 1px solid #eaeaea;
-  border: 2px solid blue;
   box-sizing: border-box;
   background-color: white;
+
   .content {
     max-width: 1200px;
-    padding: 2rem 0;
+    padding: 12px 24px;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
   }
 `;
 
-export const HomeIconWrap = styled.div`
-  width: 36px;
-  height: 36px;
+const iconSize = css`
+  width: 32px;
+  height: 32px;
+`;
 
+export const HomeIconWrap = styled.div`
+  ${iconSize}
   > svg {
     width: 100%;
     height: 100%;
+    /* fill: white;
+    stroke: black;
+    stroke-width: 10; */
   }
 `;
 
 export const BucketIconWrap = styled.div`
-  width: 36px;
-  height: 36px;
+  ${iconSize}
   > svg {
     width: 100%;
     height: 100%;
@@ -36,8 +41,7 @@ export const BucketIconWrap = styled.div`
 `;
 
 export const StoreIconWrap = styled.div`
-  width: 36px;
-  height: 36px;
+  ${iconSize}
   > svg {
     width: 100%;
     height: 100%;
@@ -45,8 +49,7 @@ export const StoreIconWrap = styled.div`
 `;
 
 export const FavorIconWrap = styled.div`
-  width: 36px;
-  height: 36px;
+  ${iconSize}
   > svg {
     width: 100%;
     height: 100%;

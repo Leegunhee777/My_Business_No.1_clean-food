@@ -1,4 +1,4 @@
-import { AuthRepository } from "../repository";
+import { AuthRepository } from '../repository';
 
 export class AuthUseCase {
   private _authRepository: AuthRepository;
@@ -11,7 +11,7 @@ export class AuthUseCase {
     const response = await this._authRepository.getCsrfToken();
     return response;
   }
-  async initUserInfo(){
+  async initUserInfo() {
     const response = await this._authRepository.getUserInfo();
     return response;
   }
@@ -34,23 +34,17 @@ export class AuthUseCase {
       password,
       name,
       email,
-      url
-    }
+      url,
+    };
 
     await this._authRepository.postSignUp(temp);
   }
 
-  async signIn({
-    username,
-    password,
-  }: {
-    username: string;
-    password: string;
-  }) {
+  async signIn({ username, password }: { username: string; password: string }) {
     const temp = {
       username,
-      password
-    }
+      password,
+    };
 
     await this._authRepository.postSignIn(temp);
   }
@@ -59,4 +53,3 @@ export class AuthUseCase {
     this._authRepository.postSignOut();
   }
 }
-

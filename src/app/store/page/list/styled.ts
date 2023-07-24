@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import { pcContentWrapper } from "../../../../style/theme";
-export const Wrap = styled.div`
- ${pcContentWrapper}
- 
- background-color: beige;
-`
+import styled from 'styled-components';
+
+import { mobileContentWrapper } from '../../../../style/theme';
+
+export const StoreListWrap = styled.div`
+  ${mobileContentWrapper}
+`;

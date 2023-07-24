@@ -9,6 +9,7 @@ const navBarInitState = {
   isOpen: false,
   validPath: false,
 };
+
 const navBarReducer = (state: NavBarType, action: ActionType) => {
   switch (action.type) {
     case 'CHANGE_OPEN_STATUS':
@@ -28,7 +29,6 @@ const navBarReducer = (state: NavBarType, action: ActionType) => {
 
 export { navBarInitState, navBarReducer };
 
-//실제 사용되는 곳에서 아래 처럼 쓰인다.
 // 해당 nav-reducers는 global-context-provider에서 사용된다
 
 // import { useState, useDispatch } from '../../../Context/GlobalContextProvider';

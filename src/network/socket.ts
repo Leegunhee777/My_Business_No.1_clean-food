@@ -4,7 +4,7 @@ export default class Socket {
   io: any;
   constructor(getAccessToken: any) {
     //아래 socket(process.env.REACT_APP_BASE_URL);코드가 서버와 소켓을 연결시켜주는 코드임
-    this.io = socket('http://localhost:3000', {
+    this.io = socket('http://localhost:5000', {
       //소켓에있는 auth라는 필드를 이용해서 토큰을 전달하게하려고한다!
       auth: cb => cb({ token: getAccessToken() }),
     });
@@ -14,7 +14,7 @@ export default class Socket {
     });
   }
 
-  onListenSocket(event: any, callback:any) {
+  onListenSocket(event: any, callback: any) {
     if (!this.io.connected) {
       this.io.connect();
     }

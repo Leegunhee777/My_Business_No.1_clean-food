@@ -1,6 +1,5 @@
-import { ListRepository } from "../repository";
-import { Store } from "../type";
-
+import { Filter } from '../page/list/state/filter';
+import { ListRepository } from '../repository';
 
 export class ListUseCase {
   private _listRepository: ListRepository;
@@ -9,9 +8,8 @@ export class ListUseCase {
     this._listRepository = listRepository;
   }
 
-  async getFilterdList(filter: Store.Filter) {
-    const result =  await this._listRepository.getList();
+  async getFilterdList(filter: Filter) {
+    const result = await this._listRepository.getList();
     return result;
   }
 }
-

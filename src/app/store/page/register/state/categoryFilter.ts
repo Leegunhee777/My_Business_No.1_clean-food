@@ -1,5 +1,4 @@
-import { atom } from "recoil";
-
+import { atom } from 'recoil';
 
 export type CategoryFilterType = {
   consult: boolean;
@@ -8,8 +7,8 @@ export type CategoryFilterType = {
   balance: boolean;
   visit: boolean;
   etc: boolean;
-  [index:string]: any;
-}
+  [index: string]: any;
+};
 const initState: CategoryFilterType = {
   consult: true,
   contract: true,
@@ -20,7 +19,6 @@ const initState: CategoryFilterType = {
 };
 
 export const categoryFilterAtom = atom<CategoryFilterType>({
-  key:'categoryFilterAtom',
-  default: initState
+  key: 'categoryFilterAtom',
+  default: initState,
 });
-

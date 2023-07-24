@@ -7,7 +7,7 @@ interface IRequestParam extends AxiosRequestConfig {
 export class HttpClient {
   getCsrfToken: any;
   axios = Axios.create({
-    baseURL: 'http://localhost:3000',
+    baseURL: 'http://localhost:5000',
     headers: { 'Content-Type': 'application/json' },
     withCredentials: true,
   });
@@ -24,12 +24,11 @@ export class HttpClient {
       method,
       headers: {
         ...headers,
-        'greenary-csrf-token': this.getCsrfToken().csrfToken,
+        'greenary-csrf-token': this.getCsrfToken(),
       },
       data: body,
     };
 
-    //axios는 자동으로 json으로 변환까지도 해준다.
     try {
       const res = await this.axios(req);
       return res.data;

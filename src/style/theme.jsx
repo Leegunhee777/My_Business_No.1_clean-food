@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import { css } from 'styled-components';
 
 const theme = {
   color: {
@@ -30,33 +30,25 @@ const theme = {
   },
 };
 
-const FOOTER_HEIGHT = 200;
-const TOPBAR_HEIGHT = 80;
-
-//pc버전을 고려했을때의 공통 wrapper이다.
-//각페이지별로 해당 wrapper로 감싸고, <div>로 한번감싼뒤 컴포넌트들을 작성하면된다.
-const pcContentWrapper = css`
-  width: 100%;
-  min-height: calc(100vh - ${FOOTER_HEIGHT + TOPBAR_HEIGHT}px);
-  > div {
-    width: 1200px;
-    margin: 0 auto;
-    padding: 56px 0px;
-    box-sizing: border-box;
-  }
-`;
-
 const mobileContentWrapper = css`
   box-sizing: border-box;
 `;
 
-export { theme, pcContentWrapper, mobileContentWrapper };
+export { theme, mobileContentWrapper };
 
-/*
-default font size 16px이다
-*/
+// const FOOTER_HEIGHT = 200;
+// const TOPBAR_HEIGHT = 80;
 
-//아래처럼 사용된다.
+// const pcContentWrapper = css`
+//   width: 100%;
+//   min-height: calc(100vh - ${FOOTER_HEIGHT + TOPBAR_HEIGHT}px);
+//   > div {
+//     width: 1200px;
+//     margin: 0 auto;
+//     padding: 56px 0px;
+//     box-sizing: border-box;
+//   }
+// `;
 // const Qwe = styled.button`
 //   background-color:  ${(props) => props.theme.color.red.dark};
 // `
